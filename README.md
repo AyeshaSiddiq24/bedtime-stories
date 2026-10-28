@@ -136,6 +136,3 @@ llm.py          Anthropic API wrapper (model choice lives here)
 $ python main.py --example
 ```
 
-## What I'd build next
-
-See the note at the top of `main.py`.
