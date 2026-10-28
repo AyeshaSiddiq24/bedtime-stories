@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alice and Bob and the Sleepy Sunflower</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=Fredoka:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #26214a;      /* the room with the lights off */
+    --sky-2: #352e66;
+    --paper: #f7f1ff;    /* pale lilac page */
+    --ink: #2e2850;
+    --moon: #f2b544;
+    --soft: #8d86c4;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    background: radial-gradient(ellipse at 50% 0%, var(--sky-2), var(--sky) 70%);
+    color: var(--ink);
+    font-family: "Andika", "Trebuchet MS", system-ui, sans-serif;  /* Andika is designed for new readers */
+    display: grid; place-items: center; padding: 16px;
+  }
+  .book {
+    width: min(720px, 100%); background: var(--paper); border-radius: 28px 28px 28px 8px;
+    padding: clamp(16px, 4vw, 32px); box-shadow: 0 30px 60px -20px #0008;
+  }
+  .page { animation: turn .35s ease; }
+  .art svg { display: block; width: 100%; height: auto; border-radius: 18px; }
+  h1, h2 { font-family: "Fredoka", "Trebuchet MS", sans-serif; font-weight: 600; text-align: center;
+           font-size: clamp(1.8rem, 5vw, 2.6rem); line-height: 1.15; margin: 24px 0 4px; }
+  .hint { text-align: center; color: var(--soft); font-size: 1.1rem; margin: 0 0 8px; }
+  .words { max-width: 60ch; margin: 20px auto 4px; }
+  .words p { font-size: clamp(1.15rem, 2.6vw, 1.4rem); line-height: 1.75; margin: 0 0 .8em; }
+  nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 20px; }
+  button {
+    font: 600 1.05rem "Fredoka", sans-serif; border: 0; border-radius: 999px; padding: 12px 22px;
+    background: var(--sky); color: var(--paper); cursor: pointer;
+  }
+  button.read { background: var(--moon); color: var(--ink); }
+  button:disabled { opacity: .3; cursor: default; }
+  button:focus-visible { outline: 3px solid var(--moon); outline-offset: 3px; }
+  .dots { display: flex; gap: 6px; }
+  .dots span { width: 9px; height: 9px; border-radius: 50%; background: #d9d2f0; }
+  .dots span.on { background: var(--moon); }
+  @keyframes turn { from { opacity: 0; transform: translateX(14px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { .page { animation: none; } }
+</style>
+</head>
+<body>
+<main class="book">
+<section class="page cover" data-speak="Alice and Bob and the Sleepy Sunflower"><div class="art"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img">
+<rect x="0" y="0" width="400" height="300" fill="#FFF4E0" />
+<circle cx="345" cy="55" r="26" fill="#F7C65B" />
+<ellipse cx="120" cy="265" rx="200" ry="60" fill="#9CCB9A" />
+<ellipse cx="340" cy="275" rx="170" ry="50" fill="#9CCB9A" />
+<rect x="285" y="110" width="100" height="85" rx="14" fill="#F7C65B" />
+<circle cx="335" cy="140" r="12" fill="#FFF4E0" />
+<rect x="270" y="190" width="18" height="30" rx="8" fill="#F2A7A0" />
+<ellipse cx="150" cy="200" rx="30" ry="6" fill="#A97454" />
+<path d="M120 200 L180 200 L172 240 Q170 246 162 246 L138 246 Q130 246 128 240 Z" fill="#F2A7A0" stroke="#2B3A5C" stroke-width="2" />
+<path d="M66 150 A24 24 0 0 1 114 150 L114 158 L66 158 Z" fill="#A97454" />
+<circle cx="90" cy="152" r="20" fill="#FFF4E0" stroke="#2B3A5C" stroke-width="2" />
+<circle cx="104" cy="128" r="6" fill="#F7C65B" />
+<circle cx="83" cy="154" r="2.5" fill="#2B3A5C" />
+<circle cx="97" cy="154" r="2.5" fill="#2B3A5C" />
+<path d="M84 162 Q90 167 96 162" fill="none" stroke="#2B3A5C" stroke-width="2" />
+<ellipse cx="90" cy="196" rx="26" ry="24" fill="#F2A7A0" />
+<ellipse cx="118" cy="192" rx="9" ry="5" fill="#F2A7A0" transform="rotate(-20 118 192)" />
+<ellipse cx="66" cy="200" rx="6" ry="4" fill="#F2A7A0" />
+<ellipse cx="76" cy="220" rx="7" ry="4" fill="#A97454" />
+<ellipse cx="104" cy="220" rx="7" ry="4" fill="#A97454" />
+<path d="M262 215 Q285 205 278 185" fill="none" stroke="#A97454" stroke-width="6" stroke-linecap="round" />
+<circle cx="240" cy="205" r="26" fill="#A97454" />
+<circle cx="240" cy="170" r="18" fill="#A97454" />
+<polygon points="226,158 230,142 238,156" fill="#A97454" />
+<polygon points="242,156 250,142 254,158" fill="#A97454" />
+<ellipse cx="240" cy="177" rx="9" ry="6" fill="#FFF4E0" />
+<circle cx="233" cy="166" r="2.5" fill="#2B3A5C" />
+<circle cx="247" cy="166" r="2.5" fill="#2B3A5C" />
+<polygon points="237,172 243,172 240,176" fill="#F2A7A0" />
+<ellipse cx="240" cy="188" rx="14" ry="4" fill="#F2A7A0" />
+<circle cx="240" cy="194" r="3.5" fill="#F7C65B" />
+<ellipse cx="205" cy="206" rx="6" ry="4" fill="#A97454" />
+<ellipse cx="228" cy="230" rx="8" ry="5" fill="#A97454" />
+<ellipse cx="252" cy="230" rx="8" ry="5" fill="#A97454" />
+</svg></div><h1>Alice and Bob and the Sleepy Sunflower</h1><p class="hint">A bedtime story</p></section>
+<section class="page" hidden data-speak="Bob was Alice&#x27;s best friend, and he was a clever gray cat. Alice lived in a yellow house beside a garden. The garden was full of humming bees and warm, sleepy flowers. Alice always kept her promises. Bob followed her everywhere. He always knew when her smile needed a little help.
+
+One warm afternoon, Alice knelt in the dirt. She pressed a tiny sunflower seed into a pot.
+
+&quot;Bob, I promise we will watch it grow together,&quot; she said.
+
+Bob tapped the pot with his paw. &quot;Every day?&quot;
+
+&quot;Every single day,&quot; said Alice.
+
+Then gray clouds rolled across the sky. Alice peeked into the pot. The soil was still flat and brown."><div class="art" aria-label="In a warm sunny garden, kneeling Alice presses a sunflower seed into a pot while Bob the gray cat taps it with his paw and she promises to watch it grow together."><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img">
+<rect x="0" y="0" width="400" height="300" fill="#FFF4E0" />
+<circle cx="345" cy="55" r="26" fill="#F7C65B" />
+<ellipse cx="120" cy="265" rx="200" ry="60" fill="#9CCB9A" />
+<ellipse cx="340" cy="275" rx="170" ry="50" fill="#9CCB9A" />
+<rect x="285" y="110" width="100" height="85" rx="14" fill="#F7C65B" />
+<circle cx="335" cy="140" r="12" fill="#FFF4E0" />
+<rect x="270" y="190" width="18" height="30" rx="8" fill="#F2A7A0" />
+<ellipse cx="150" cy="200" rx="30" ry="6" fill="#A97454" />
+<path d="M120 200 L180 200 L172 240 Q170 246 162 246 L138 246 Q130 246 128 240 Z" fill="#F2A7A0" stroke="#2B3A5C" stroke-width="2" />
+<path d="M66 150 A24 24 0 0 1 114 150 L114 158 L66 158 Z" fill="#A97454" />
+<circle cx="90" cy="152" r="20" fill="#FFF4E0" stroke="#2B3A5C" stroke-width="2" />
+<circle cx="104" cy="128" r="6" fill="#F7C65B" />
+<circle cx="83" cy="154" r="2.5" fill="#2B3A5C" />
+<circle cx="97" cy="154" r="2.5" fill="#2B3A5C" />
+<path d="M84 162 Q90 167 96 162" fill="none" stroke="#2B3A5C" stroke-width="2" />
+<ellipse cx="90" cy="196" rx="26" ry="24" fill="#F2A7A0" />
+<ellipse cx="118" cy="192" rx="9" ry="5" fill="#F2A7A0" transform="rotate(-20 118 192)" />
+<ellipse cx="66" cy="200" rx="6" ry="4" fill="#F2A7A0" />
+<ellipse cx="76" cy="220" rx="7" ry="4" fill="#A97454" />
+<ellipse cx="104" cy="220" rx="7" ry="4" fill="#A97454" />
+<path d="M262 215 Q285 205 278 185" fill="none" stroke="#A97454" stroke-width="6" stroke-linecap="round" />
+<circle cx="240" cy="205" r="26" fill="#A97454" />
+<circle cx="240" cy="170" r="18" fill="#A97454" />
+<polygon points="226,158 230,142 238,156" fill="#A97454" />
+<polygon points="242,156 250,142 254,158" fill="#A97454" />
+<ellipse cx="240" cy="177" rx="9" ry="6" fill="#FFF4E0" />
+<circle cx="233" cy="166" r="2.5" fill="#2B3A5C" />
+<circle cx="247" cy="166" r="2.5" fill="#2B3A5C" />
+<polygon points="237,172 243,172 240,176" fill="#F2A7A0" />
+<ellipse cx="240" cy="188" rx="14" ry="4" fill="#F2A7A0" />
+<circle cx="240" cy="194" r="3.5" fill="#F7C65B" />
+<ellipse cx="205" cy="206" rx="6" ry="4" fill="#A97454" />
+<ellipse cx="228" cy="230" rx="8" ry="5" fill="#A97454" />
+<ellipse cx="252" cy="230" rx="8" ry="5" fill="#A97454" />
+</svg></div><div class="words"><p>Bob was Alice&#x27;s best friend, and he was a clever gray cat. Alice lived in a yellow house beside a garden. The garden was full of humming bees and warm, sleepy flowers. Alice always kept her promises. Bob followed her everywhere. He always knew when her smile needed a little help.</p><p>One warm afternoon, Alice knelt in the dirt. She pressed a tiny sunflower seed into a pot.</p><p>&quot;Bob, I promise we will watch it grow together,&quot; she said.</p><p>Bob tapped the pot with his paw. &quot;Every day?&quot;</p><p>&quot;Every single day,&quot; said Alice.</p><p>Then gray clouds rolled across the sky. Alice peeked into the pot. The soil was still flat and brown.</p></div></section>
+<section class="page" hidden data-speak="She watered it. Then she watered it again.
+
+&quot;Nothing is happening,&quot; she sighed.
+
+&quot;It will grow soon,&quot; said Bob.
+
+Alice spun around. &quot;You don&#x27;t know that!&quot; she snapped. She turned away with a tight, sad frown.
+
+Bob&#x27;s ears drooped. For a moment, he looked ready to scurry under the porch. But he didn&#x27;t. He sat down quietly beside the pot instead.
+
+&quot;I know you&#x27;re worried,&quot; he said softly. &quot;I&#x27;m here, even when the seed is slow.&quot;"><div class="art" aria-label="Alice turns away from the seedling pot with a tight frown while Bob sits quietly beside it, ears drooping, offering his company."><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img"><rect x="0" y="0" width="400" height="300" fill="#FFF4E0" /><circle cx="340" cy="50" r="22" fill="#F7C65B" /><ellipse cx="200" cy="320" rx="260" ry="90" fill="#9CCB9A" /><circle cx="60" cy="262" r="4" fill="#FFF4E0" /><circle cx="90" cy="276" r="4" fill="#FFF4E0" /><circle cx="130" cy="268" r="4" fill="#FFF4E0" /><circle cx="170" cy="282" r="4" fill="#FFF4E0" /><circle cx="240" cy="270" r="4" fill="#FFF4E0" /><circle cx="330" cy="286" r="4" fill="#FFF4E0" /><polygon points="185,225 225,225 220,260 190,260" fill="#A97454" /><ellipse cx="205" cy="225" rx="20" ry="4" fill="#2B3A5C" /><line x1="205" y1="222" x2="205" y2="195" stroke="#9CCB9A" stroke-width="4" stroke-linecap="round" /><ellipse cx="195" cy="198" rx="8" ry="5" fill="#9CCB9A" /><ellipse cx="215" cy="192" rx="8" ry="5" fill="#9CCB9A" /><ellipse cx="120" cy="205" rx="28" ry="34" fill="#F2A7A0" stroke="#2B3A5C" stroke-width="3" /><ellipse cx="92" cy="200" rx="8" ry="14" fill="#F2A7A0" /><ellipse cx="150" cy="205" rx="12" ry="7" fill="#F2A7A0" /><ellipse cx="108" cy="240" rx="9" ry="6" fill="#A97454" /><ellipse cx="132" cy="240" rx="9" ry="6" fill="#A97454" /><circle cx="120" cy="150" r="30" fill="#FFF4E0" stroke="#2B3A5C" stroke-width="3" /><path d="M88 150 A32 32 0 0 1 152 150 Z" fill="#A97454" /><circle cx="120" cy="118" r="6" fill="#F7C65B" /><circle cx="112" cy="156" r="3" fill="#2B3A5C" /><path d="M108 174 Q116 168 124 174" fill="none" stroke="#2B3A5C" stroke-width="3" stroke-linecap="round" /><ellipse cx="290" cy="225" rx="32" ry="30" fill="#A97454" /><polygon points="270,172 258,150 282,162" fill="#A97454" /><polygon points="310,172 322,150 298,162" fill="#A97454" /><circle cx="290" cy="180" r="26" fill="#A97454" /><ellipse cx="290" cy="190" rx="14" ry="10" fill="#FFF4E0" /><circle cx="281" cy="177" r="3" fill="#2B3A5C" /><circle cx="299" cy="177" r="3" fill="#2B3A5C" /><polygon points="286,186 294,186 290,191" fill="#F2A7A0" /><rect x="268" y="202" width="44" height="8" rx="4" fill="#F2A7A0" /><circle cx="290" cy="215" r="5" fill="#F7C65B" /><ellipse cx="276" cy="252" rx="9" ry="6" fill="#A97454" /><ellipse cx="304" cy="252" rx="9" ry="6" fill="#A97454" /><path d="M318 235 Q345 230 340 205" fill="none" stroke="#A97454" stroke-width="8" stroke-linecap="round" /></svg></div><div class="words"><p>She watered it. Then she watered it again.</p><p>&quot;Nothing is happening,&quot; she sighed.</p><p>&quot;It will grow soon,&quot; said Bob.</p><p>Alice spun around. &quot;You don&#x27;t know that!&quot; she snapped. She turned away with a tight, sad frown.</p><p>Bob&#x27;s ears drooped. For a moment, he looked ready to scurry under the porch. But he didn&#x27;t. He sat down quietly beside the pot instead.</p><p>&quot;I know you&#x27;re worried,&quot; he said softly. &quot;I&#x27;m here, even when the seed is slow.&quot;</p></div></section>
+<section class="page" hidden data-speak="Alice looked at the pot. She wanted it to grow so badly.
+
+&quot;I&#x27;m sorry I snapped,&quot; she whispered. She leaned against his soft fur. &quot;Good friends stay close, sunshine or rain.&quot;
+
+Bob&#x27;s whiskers twitched. He had an idea. He tore a scrap of paper from her notebook. He wrote SPROUT GUARD in big, wobbly letters. Then he pressed one paw into a dab of mud and stamped it at the bottom.
+
+He propped the sign against the pot. Then he stood up tall.
+
+&quot;Attention,&quot; he said in his deepest voice. &quot;I am the Sprout Guard. Nothing gets past me.&quot;
+
+He marched along the edge of the pot. He saluted. He stopped, sniffed the soil, and marched back again."><div class="art" aria-label="Bob the cat stands tall and salutes beside the sprout pot, with his SPROUT GUARD sign propped against it, while Alice looks on from the left."><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img"><rect x="0" y="0" width="400" height="300" fill="#FFF4E0" /><circle cx="340" cy="60" r="30" fill="#F7C65B" /><ellipse cx="200" cy="290" rx="260" ry="60" fill="#9CCB9A" /><circle cx="40" cy="215" r="25" fill="#9CCB9A" /><circle cx="370" cy="210" r="22" fill="#9CCB9A" /><circle cx="60" cy="250" r="4" fill="#FFF4E0" /><circle cx="350" cy="262" r="4" fill="#FFF4E0" /><path d="M160 190 L240 190 L230 245 Q200 252 170 245 Z" fill="#A97454" /><rect x="155" y="182" width="90" height="14" rx="7" fill="#A97454" /><line x1="200" y1="182" x2="200" y2="150" stroke="#9CCB9A" stroke-width="4" stroke-linecap="round" /><ellipse cx="190" cy="160" rx="12" ry="6" fill="#9CCB9A" /><ellipse cx="211" cy="152" rx="12" ry="6" fill="#9CCB9A" /><g transform="rotate(-6 140 215)"><rect x="122" y="198" width="42" height="34" rx="4" fill="#FFF4E0" stroke="#A97454" stroke-width="2" /><line x1="128" y1="208" x2="158" y2="208" stroke="#2B3A5C" stroke-width="2.5" stroke-linecap="round" /><line x1="128" y1="216" x2="152" y2="216" stroke="#2B3A5C" stroke-width="2.5" stroke-linecap="round" /><line x1="128" y1="224" x2="156" y2="224" stroke="#2B3A5C" stroke-width="2.5" stroke-linecap="round" /><circle cx="145" cy="226" r="3" fill="#A97454" /></g><ellipse cx="100" cy="230" rx="26" ry="30" fill="#F2A7A0" /><ellipse cx="76" cy="232" rx="6" ry="10" fill="#FFF4E0" /><ellipse cx="124" cy="232" rx="6" ry="10" fill="#FFF4E0" /><circle cx="100" cy="180" r="24" fill="#FFF4E0" /><path d="M76 180 A24 24 0 0 1 124 180 Z" fill="#A97454" /><circle cx="110" cy="158" r="5" fill="#F7C65B" /><circle cx="92" cy="184" r="2.5" fill="#2B3A5C" /><circle cx="108" cy="184" r="2.5" fill="#2B3A5C" /><path d="M93 191 Q100 196 107 191" fill="none" stroke="#2B3A5C" stroke-width="2" stroke-linecap="round" /><ellipse cx="92" cy="262" rx="7" ry="4" fill="#2B3A5C" /><ellipse cx="110" cy="262" rx="7" ry="4" fill="#2B3A5C" /><path d="M314 240 Q340 230 332 205" fill="none" stroke="#A97454" stroke-width="6" stroke-linecap="round" /><ellipse cx="290" cy="220" rx="26" ry="34" fill="#A97454" /><polygon points="272,166 276,150 286,162" fill="#A97454" /><polygon points="308,166 304,150 294,162" fill="#A97454" /><circle cx="290" cy="178" r="22" fill="#A97454" /><ellipse cx="290" cy="186" rx="11" ry="8" fill="#FFF4E0" /><circle cx="282" cy="175" r="2.5" fill="#2B3A5C" /><circle cx="298" cy="175" r="2.5" fill="#2B3A5C" /><polygon points="287,183 293,183 290,187" fill="#F2A7A0" /><line x1="312" y1="218" x2="304" y2="180" stroke="#A97454" stroke-width="8" stroke-linecap="round" /><ellipse cx="268" cy="215" rx="6" ry="12" fill="#A97454" /><rect x="272" y="198" width="36" height="6" rx="3" fill="#F2A7A0" /><circle cx="290" cy="206" r="4" fill="#F7C65B" /><ellipse cx="280" cy="256" rx="8" ry="5" fill="#A97454" /><ellipse cx="302" cy="256" rx="8" ry="5" fill="#A97454" /></svg></div><div class="words"><p>Alice looked at the pot. She wanted it to grow so badly.</p><p>&quot;I&#x27;m sorry I snapped,&quot; she whispered. She leaned against his soft fur. &quot;Good friends stay close, sunshine or rain.&quot;</p><p>Bob&#x27;s whiskers twitched. He had an idea. He tore a scrap of paper from her notebook. He wrote SPROUT GUARD in big, wobbly letters. Then he pressed one paw into a dab of mud and stamped it at the bottom.</p><p>He propped the sign against the pot. Then he stood up tall.</p><p>&quot;Attention,&quot; he said in his deepest voice. &quot;I am the Sprout Guard. Nothing gets past me.&quot;</p><p>He marched along the edge of the pot. He saluted. He stopped, sniffed the soil, and marched back again.</p></div></section>
+<section class="page" hidden data-speak="Alice giggled. &quot;Guard, is the seed still there?&quot;
+
+&quot;Yes, boss,&quot; said Bob, very serious. &quot;Still there. Still sleepy. Still on duty.&quot;
+
+Alice laughed so hard she held her tummy. Her sad feeling floated away like a bubble.
+
+The next morning, Alice ran outside in her socks. A tiny green curl was poking up through the soil.
+
+&quot;Bob! Bob, come quick!&quot;"><div class="art" aria-label="On a bright morning in the backyard, Alice runs out in her socks, points excitedly at a tiny green curl poking up through the soil, and calls for Bob, who peeks from the cozy house door."><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img"><rect x="0" y="0" width="400" height="300" fill="#FFF4E0" /><circle cx="350" cy="50" r="22" fill="#F7C65B" /><ellipse cx="120" cy="230" rx="200" ry="60" fill="#9CCB9A" /><ellipse cx="330" cy="240" rx="180" ry="50" fill="#9CCB9A" /><rect x="290" y="110" width="100" height="110" rx="16" fill="#FFF4E0" stroke="#A97454" stroke-width="3" /><rect x="310" y="90" width="14" height="28" rx="4" fill="#F2A7A0" /><circle cx="345" cy="135" r="11" fill="#F7C65B" /><rect x="325" y="170" width="30" height="50" rx="15" fill="#F2A7A0" /><circle cx="40" cy="195" r="20" fill="#9CCB9A" /><circle cx="66" cy="188" r="24" fill="#9CCB9A" /><rect x="0" y="220" width="400" height="80" fill="#9CCB9A" /><ellipse cx="280" cy="228" rx="26" ry="8" fill="#A97454" /><path d="M280,224 Q283,206 276,196 Q270,188 280,182" fill="none" stroke="#9CCB9A" stroke-width="4" stroke-linecap="round" /><ellipse cx="290" cy="195" rx="6" ry="3" fill="#9CCB9A" transform="rotate(-20 290 195)" /><ellipse cx="150" cy="195" rx="34" ry="40" fill="#F2A7A0" /><circle cx="150" cy="120" r="30" fill="#FFF4E0" /><path d="M120,118 A30,30 0 0 1 180,118 Z" fill="#A97454" /><circle cx="170" cy="90" r="7" fill="#F7C65B" /><circle cx="140" cy="124" r="3" fill="#2B3A5C" /><circle cx="160" cy="124" r="3" fill="#2B3A5C" /><path d="M141,134 Q150,141 159,134" fill="none" stroke="#2B3A5C" stroke-width="2.5" stroke-linecap="round" /><ellipse cx="118" cy="195" rx="8" ry="14" fill="#F2A7A0" /><ellipse cx="182" cy="172" rx="8" ry="14" fill="#F2A7A0" transform="rotate(-40 182 172)" /><ellipse cx="138" cy="234" rx="10" ry="6" fill="#FFF4E0" /><ellipse cx="162" cy="234" rx="10" ry="6" fill="#FFF4E0" /><ellipse cx="342" cy="190" rx="18" ry="22" fill="#A97454" /><circle cx="342" cy="162" r="14" fill="#A97454" /><polygon points="332,154 333,140 342,150" fill="#A97454" /><polygon points="352,154 351,140 342,150" fill="#A97454" /><ellipse cx="342" cy="168" rx="7" ry="5" fill="#FFF4E0" /><circle cx="337" cy="159" r="2" fill="#2B3A5C" /><circle cx="347" cy="159" r="2" fill="#2B3A5C" /><polygon points="340,166 344,166 342,169" fill="#F2A7A0" /><rect x="331" y="172" width="22" height="4" rx="2" fill="#F2A7A0" /><circle cx="342" cy="177" r="3" fill="#F7C65B" /><path d="M356,200 Q372,190 366,172" fill="none" stroke="#A97454" stroke-width="5" stroke-linecap="round" /></svg></div><div class="words"><p>Alice giggled. &quot;Guard, is the seed still there?&quot;</p><p>&quot;Yes, boss,&quot; said Bob, very serious. &quot;Still there. Still sleepy. Still on duty.&quot;</p><p>Alice laughed so hard she held her tummy. Her sad feeling floated away like a bubble.</p><p>The next morning, Alice ran outside in her socks. A tiny green curl was poking up through the soil.</p><p>&quot;Bob! Bob, come quick!&quot;</p></div></section>
+<section class="page" hidden data-speak="Bob raced over, the Sprout Guard sign still tucked under one paw. His whiskers twitched. &quot;It&#x27;s growing!&quot;
+
+Alice grinned. &quot;I promised to watch every day, and I did.&quot;
+
+Bob puffed out his chest. &quot;And I guarded it all night!&quot;
+
+They cheered together. &quot;Hooray!&quot; Alice hugged him tight. &quot;Good friends stay close, sunshine or rain.&quot;
+
+That evening, the garden grew quiet at last. Alice pulled a cozy blanket up to her chin. Bob curled up warm against her side."><div class="art" aria-label="Bob races across the garden clutching his Sprout Guard sign under one paw, saying &quot;It&#x27;s growing!&quot; beside a tiny green curl of a sprout while Alice grins and reaches toward him."><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img">
+<rect x="0" y="0" width="400" height="300" fill="#FFF4E0" />
+<circle cx="340" cy="50" r="24" fill="#F7C65B" />
+<ellipse cx="200" cy="300" rx="260" ry="80" fill="#9CCB9A" />
+<circle cx="90" cy="250" r="5" fill="#FFF4E0" />
+<circle cx="110" cy="262" r="5" fill="#FFF4E0" />
+<circle cx="300" cy="258" r="5" fill="#FFF4E0" />
+<path d="M196 252 Q186 240 198 234 Q206 240 200 248" fill="none" stroke="#9CCB9A" stroke-width="4" stroke-linecap="round" />
+<ellipse cx="190" cy="252" rx="6" ry="3" fill="#9CCB9A" />
+<circle cx="140" cy="130" r="30" fill="#FFF4E0" />
+<path d="M110 125 A30 30 0 0 1 170 125 Z" fill="#A97454" />
+<circle cx="160" cy="102" r="7" fill="#F7C65B" />
+<circle cx="130" cy="135" r="3" fill="#2B3A5C" />
+<circle cx="150" cy="135" r="3" fill="#2B3A5C" />
+<path d="M130 146 Q140 154 150 146" fill="none" stroke="#2B3A5C" stroke-width="2.5" stroke-linecap="round" />
+<ellipse cx="140" cy="190" rx="28" ry="32" fill="#F2A7A0" />
+<ellipse cx="110" cy="190" rx="9" ry="6" fill="#F2A7A0" />
+<ellipse cx="172" cy="188" rx="9" ry="6" fill="#F2A7A0" />
+<ellipse cx="128" cy="222" rx="9" ry="5" fill="#F2A7A0" />
+<ellipse cx="152" cy="222" rx="9" ry="5" fill="#F2A7A0" />
+<ellipse cx="245" cy="200" rx="26" ry="24" fill="#A97454" />
+<circle cx="238" cy="160" r="22" fill="#A97454" />
+<polygon points="218,148 222,128 234,142" fill="#A97454" />
+<polygon points="248,142 256,128 260,148" fill="#A97454" />
+<ellipse cx="236" cy="170" rx="11" ry="8" fill="#FFF4E0" />
+<circle cx="230" cy="156" r="2.5" fill="#2B3A5C" />
+<circle cx="245" cy="156" r="2.5" fill="#2B3A5C" />
+<polygon points="234,164 240,164 237,169" fill="#F2A7A0" />
+<rect x="222" y="180" width="30" height="6" rx="3" fill="#F2A7A0" />
+<circle cx="237" cy="190" r="4" fill="#F7C65B" />
+<path d="M270 205 Q292 195 282 175" fill="none" stroke="#A97454" stroke-width="6" stroke-linecap="round" />
+<rect x="216" y="210" width="30" height="22" rx="3" fill="#F7C65B" stroke="#2B3A5C" stroke-width="2" />
+<ellipse cx="232" cy="224" rx="6" ry="5" fill="#A97454" />
+<ellipse cx="228" cy="234" rx="8" ry="4" fill="#A97454" />
+<ellipse cx="260" cy="234" rx="8" ry="4" fill="#A97454" />
+</svg></div><div class="words"><p>Bob raced over, the Sprout Guard sign still tucked under one paw. His whiskers twitched. &quot;It&#x27;s growing!&quot;</p><p>Alice grinned. &quot;I promised to watch every day, and I did.&quot;</p><p>Bob puffed out his chest. &quot;And I guarded it all night!&quot;</p><p>They cheered together. &quot;Hooray!&quot; Alice hugged him tight. &quot;Good friends stay close, sunshine or rain.&quot;</p><p>That evening, the garden grew quiet at last. Alice pulled a cozy blanket up to her chin. Bob curled up warm against her side.</p></div></section>
+<section class="page" hidden data-speak="The stars peeked out, one by one.
+
+Alice&#x27;s eyes felt heavy. Her breathing slowed.
+
+&quot;Good friends stay close,&quot; she whispered. &quot;Sunshine or rain.&quot;
+
+Bob purred, low and soft, like a little motor. Outside, the tiny sunflower leaf stretched in the moonlight, green and sleepy.
+
+Alice drifted off, and Bob kept watch until morning."><div class="art" aria-label="Alice lies tucked under a pink blanket in a cozy bed, sleeping beside Bob the cat, while through the window a sleepy green sunflower leaf stretches under the moon and stars."><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img">
+  <rect x="0" y="0" width="400" height="300" fill="#2B3A5C" />
+  <rect x="250" y="30" width="120" height="110" rx="20" fill="#FFF4E0" />
+  <rect x="260" y="40" width="100" height="90" rx="12" fill="#2B3A5C" />
+  <circle cx="290" cy="65" r="14" fill="#FFF4E0" />
+  <circle cx="297" cy="60" r="12" fill="#2B3A5C" />
+  <circle cx="275" cy="110" r="2" fill="#FFF4E0" />
+  <circle cx="340" cy="55" r="2" fill="#FFF4E0" />
+  <circle cx="330" cy="115" r="2" fill="#FFF4E0" />
+  <circle cx="268" cy="58" r="2" fill="#FFF4E0" />
+  <rect x="318" y="40" width="4" height="90" fill="#FFF4E0" />
+  <rect x="260" y="84" width="100" height="4" fill="#FFF4E0" />
+  <rect x="250" y="140" width="120" height="6" rx="3" fill="#FFF4E0" />
+  <rect x="340" y="95" width="4" height="45" fill="#9CCB9A" />
+  <ellipse cx="352" cy="108" rx="16" ry="6" transform="rotate(-25 352 108)" fill="#9CCB9A" />
+  <rect x="8" y="130" width="22" height="150" rx="10" fill="#A97454" />
+  <rect x="20" y="200" width="360" height="70" rx="20" fill="#FFF4E0" />
+  <ellipse cx="120" cy="174" rx="38" ry="12" fill="#FFF4E0" />
+  <rect x="60" y="176" width="300" height="70" rx="28" fill="#F2A7A0" />
+  <circle cx="120" cy="150" r="26" fill="#FFF4E0" />
+  <path d="M94 148 Q94 122 120 122 Q146 122 146 148 Q130 136 120 136 Q104 136 94 148 Z" fill="#A97454" />
+  <circle cx="132" cy="124" r="6" fill="#F7C65B" />
+  <path d="M108 152 Q112 156 116 152" stroke="#2B3A5C" stroke-width="2" fill="none" />
+  <path d="M124 152 Q128 156 132 152" stroke="#2B3A5C" stroke-width="2" fill="none" />
+  <path d="M114 164 Q120 168 126 164" stroke="#2B3A5C" stroke-width="2" fill="none" />
+  <path d="M240 210 Q262 205 258 186" stroke="#A97454" stroke-width="7" fill="none" stroke-linecap="round" />
+  <ellipse cx="210" cy="206" rx="34" ry="20" fill="#A97454" />
+  <circle cx="200" cy="178" r="20" fill="#A97454" />
+  <polygon points="184,166 188,150 196,162" fill="#A97454" />
+  <polygon points="204,162 212,150 216,166" fill="#A97454" />
+  <ellipse cx="200" cy="186" rx="10" ry="7" fill="#FFF4E0" />
+  <path d="M190 176 Q193 179 196 176" stroke="#2B3A5C" stroke-width="2" fill="none" />
+  <path d="M204 176 Q207 179 210 176" stroke="#2B3A5C" stroke-width="2" fill="none" />
+  <polygon points="198,182 202,182 200,185" fill="#F2A7A0" />
+  <rect x="186" y="194" width="28" height="5" rx="2" fill="#F2A7A0" />
+  <circle cx="200" cy="203" r="3.5" fill="#F7C65B" />
+</svg></div><div class="words"><p>The stars peeked out, one by one.</p><p>Alice&#x27;s eyes felt heavy. Her breathing slowed.</p><p>&quot;Good friends stay close,&quot; she whispered. &quot;Sunshine or rain.&quot;</p><p>Bob purred, low and soft, like a little motor. Outside, the tiny sunflower leaf stretched in the moonlight, green and sleepy.</p><p>Alice drifted off, and Bob kept watch until morning.</p></div></section>
+<section class="page end" hidden data-speak="The end. Goodnight."><div class="art"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img">
+  <rect x="0" y="0" width="400" height="300" fill="#2B3A5C" />
+  <rect x="250" y="30" width="120" height="110" rx="20" fill="#FFF4E0" />
+  <rect x="260" y="40" width="100" height="90" rx="12" fill="#2B3A5C" />
+  <circle cx="290" cy="65" r="14" fill="#FFF4E0" />
+  <circle cx="297" cy="60" r="12" fill="#2B3A5C" />
+  <circle cx="275" cy="110" r="2" fill="#FFF4E0" />
+  <circle cx="340" cy="55" r="2" fill="#FFF4E0" />
+  <circle cx="330" cy="115" r="2" fill="#FFF4E0" />
+  <circle cx="268" cy="58" r="2" fill="#FFF4E0" />
+  <rect x="318" y="40" width="4" height="90" fill="#FFF4E0" />
+  <rect x="260" y="84" width="100" height="4" fill="#FFF4E0" />
+  <rect x="250" y="140" width="120" height="6" rx="3" fill="#FFF4E0" />
+  <rect x="340" y="95" width="4" height="45" fill="#9CCB9A" />
+  <ellipse cx="352" cy="108" rx="16" ry="6" transform="rotate(-25 352 108)" fill="#9CCB9A" />
+  <rect x="8" y="130" width="22" height="150" rx="10" fill="#A97454" />
+  <rect x="20" y="200" width="360" height="70" rx="20" fill="#FFF4E0" />
+  <ellipse cx="120" cy="174" rx="38" ry="12" fill="#FFF4E0" />
+  <rect x="60" y="176" width="300" height="70" rx="28" fill="#F2A7A0" />
+  <circle cx="120" cy="150" r="26" fill="#FFF4E0" />
+  <path d="M94 148 Q94 122 120 122 Q146 122 146 148 Q130 136 120 136 Q104 136 94 148 Z" fill="#A97454" />
+  <circle cx="132" cy="124" r="6" fill="#F7C65B" />
+  <path d="M108 152 Q112 156 116 152" stroke="#2B3A5C" stroke-width="2" fill="none" />
+  <path d="M124 152 Q128 156 132 152" stroke="#2B3A5C" stroke-width="2" fill="none" />
+  <path d="M114 164 Q120 168 126 164" stroke="#2B3A5C" stroke-width="2" fill="none" />
+  <path d="M240 210 Q262 205 258 186" stroke="#A97454" stroke-width="7" fill="none" stroke-linecap="round" />
+  <ellipse cx="210" cy="206" rx="34" ry="20" fill="#A97454" />
+  <circle cx="200" cy="178" r="20" fill="#A97454" />
+  <polygon points="184,166 188,150 196,162" fill="#A97454" />
+  <polygon points="204,162 212,150 216,166" fill="#A97454" />
+  <ellipse cx="200" cy="186" rx="10" ry="7" fill="#FFF4E0" />
+  <path d="M190 176 Q193 179 196 176" stroke="#2B3A5C" stroke-width="2" fill="none" />
+  <path d="M204 176 Q207 179 210 176" stroke="#2B3A5C" stroke-width="2" fill="none" />
+  <polygon points="198,182 202,182 200,185" fill="#F2A7A0" />
+  <rect x="186" y="194" width="28" height="5" rx="2" fill="#F2A7A0" />
+  <circle cx="200" cy="203" r="3.5" fill="#F7C65B" />
+</svg></div><h2>The end</h2><p class="hint">Goodnight.</p></section>
+<nav>
+  <button class="prev" aria-label="Previous page">Back</button>
+  <div class="dots" aria-hidden="true"></div>
+  <button class="read">Read to me</button>
+  <button class="next" aria-label="Next page">Next</button>
+</nav>
+</main>
+<script>
+  // ---- Page turning ----
+  const pages = [...document.querySelectorAll(".page")];
+  const prev = document.querySelector(".prev"), next = document.querySelector(".next");
+  const read = document.querySelector(".read"), dots = document.querySelector(".dots");
+  const canSpeak = "speechSynthesis" in window;
+  let at = 0, reading = false, run = 0;
+  pages.forEach(() => dots.appendChild(document.createElement("span")));
+
+  function show(i) {
+    at = Math.max(0, Math.min(pages.length - 1, i));
+    pages.forEach((p, k) => p.hidden = k !== at);
+    [...dots.children].forEach((d, k) => d.classList.toggle("on", k === at));
+    prev.disabled = at === 0; next.disabled = at === pages.length - 1;
+    if (reading) speakPage();
+  }
+
+  // ---- Choosing a friendly voice ----
+  // Novelty and robotic voices that sound strange (or scary) reading to a child.
+  const AVOID = /albert|bad news|bahh|bells|boing|bubbles|cellos|good news|jester|organ|superstar|trinoids|whisper|wobble|zarvox|fred|junior|ralph|kathy|compact/i;
+  const PREFERRED = ["Ava", "Zoe", "Samantha", "Allison", "Susan", "Karen", "Moira", "Tessa", "Serena",
+                     "Google US English", "Google UK English Female", "Microsoft Aria", "Microsoft Jenny"];
+  const picker = document.createElement("select");
+  picker.setAttribute("aria-label", "Reading voice");
+  picker.style.cssText = "font:500 .95rem Fredoka,sans-serif;border-radius:999px;padding:10px 12px;" +
+                         "border:2px solid #d9d2f0;background:#fff;color:#2e2850;max-width:150px";
+  let voices = [], voice = null;
+
+  function score(v) {
+    let s = 0;
+    const i = PREFERRED.findIndex(n => v.name.startsWith(n));
+    if (i >= 0) s += 100 - i;
+    if (/premium|enhanced|natural|neural/i.test(v.name)) s += 50;   // higher-quality versions of a voice
+    if (/^en[-_]US/i.test(v.lang)) s += 5;
+    return s;
+  }
+  function loadVoices() {
+    voices = speechSynthesis.getVoices().filter(v => /^en/i.test(v.lang) && !AVOID.test(v.name))
+                                        .sort((a, b) => score(b) - score(a));
+    if (!voices.length) return;
+    let saved = null;
+    try { saved = localStorage.getItem("bedtime-voice"); } catch (e) {}
+    voice = voices.find(v => v.name === saved) || voices[0];
+    picker.innerHTML = voices.map(v => `<option${v === voice ? " selected" : ""}>${v.name}</option>`).join("");
+  }
+  picker.onchange = () => {
+    voice = voices.find(v => v.name === picker.value);
+    try { localStorage.setItem("bedtime-voice", voice.name); } catch (e) {}
+    if (reading) speakPage();
+  };
+
+  // ---- Reading with expression ----
+  // Each sentence is spoken separately so its tone can match: excited, curious, a character talking, or sleepy.
+  function sentences(text) {
+    return text.replace(/\s+/g, " ").match(/[^.!?]+[.!?]+["\u201d\u2019']*|[^.!?]+$/g) || [text];
+  }
+  function toneFor(sentence, sleepy) {
+    if (sleepy) return { rate: 0.78, pitch: 1.0 };                       // calm, slow wind-down
+    const t = { rate: 0.95, pitch: 1.15 };                               // warm, friendly base
+    if (/!["\u201d\u2019']*$/.test(sentence)) { t.rate = 1.05; t.pitch = 1.4; }  // excitement
+    else if (/\?["\u201d\u2019']*$/.test(sentence)) { t.pitch = 1.3; }   // curiosity
+    if (/["\u201c\u201d]/.test(sentence)) t.pitch += 0.1;                // a character is talking
+    return t;
+  }
+  function speakPage() {
+    speechSynthesis.cancel();
+    const mine = ++run;                       // ignore callbacks from speech we cancelled
+    const sleepy = at >= pages.length - 2;
+    const parts = sentences(pages[at].dataset.speak);
+    parts.forEach((sentence, k) => {
+      const u = new SpeechSynthesisUtterance(sentence.trim());
+      const t = toneFor(sentence, sleepy);
+      u.rate = t.rate; u.pitch = t.pitch;
+      if (voice) u.voice = voice;
+      if (k === parts.length - 1) u.onend = () => {
+        if (mine !== run || !reading) return;
+        if (at < pages.length - 1) setTimeout(() => { if (mine === run && reading) show(at + 1); }, 900);
+        else stop();
+      };
+      speechSynthesis.speak(u);
+    });
+  }
+  function stop() { reading = false; run++; speechSynthesis.cancel(); read.textContent = "Read to me"; }
+
+  if (canSpeak) {
+    read.parentNode.insertBefore(picker, read);
+    read.parentNode.style.flexWrap = "wrap";
+    loadVoices();
+    speechSynthesis.onvoiceschanged = loadVoices;   // Chrome loads voices a moment after the page
+  } else {
+    read.hidden = true;
+  }
+  read.onclick = () => { if (reading) return stop(); reading = true; read.textContent = "Stop reading"; speakPage(); };
+  prev.onclick = () => show(at - 1);
+  next.onclick = () => show(at + 1);
+  document.addEventListener("keydown", e => {
+    if (e.target === picker) return;
+    if (e.key === "ArrowRight") show(at + 1);
+    if (e.key === "ArrowLeft") show(at - 1);
+  });
+  show(0);
+</script>
+</body>
+</html>
